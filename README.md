@@ -5,22 +5,22 @@ The following is an example of pseudocode of the ego equation as a confindence m
 implicitly encoded into the ego equation:
 
 #### # Compute Knowledge <br>
-knowledge = calculateKnowledge();
+Knowledge $\gets$ R + $\bar{R}$ + $\sum_{} \vec{Q}$ + $\sum_{}$ $\vec{\pi}$ + $\sum_{} \vec{W}$ + (ANY Knowledge available to agent)<br>
 
 #### # Calculate the ego equation <br>
-ego = $\lbrace ^{ \frac{1}{knowledge}, \\ knolwedge \\ > \\ 0} _{1, \\ otherwise}$ <br>
+Ego $\gets$ $\lbrace ^{ \frac{1}{Knowledge}, \\ Knolwedge \\ > \\ 0} _{1, \\ otherwise}$ <br>
 
 #### # Calculate the reward for each action taken by the agent <br>
-reward = calculateReward(action)
+reward $\gets$ calculateReward(action)
 
 #### # Incorporate the reward into the ego equation explicitly or implicitly <br>
-ego = $\lbrace ^{ ego * reward, \\ goal \\ explicit} _{ego, \\ goal \\ implicit}$ <br>
+Ego $\gets$ $\lbrace ^{ Ego * reward, \\ goal \\ explicit} _{Ego, \\ goal \\ implicit}$ <br>
 
 #### # Use the ego equation to determine the agent's level of confidence <br>
-confidence = determineConfidence(ego)
+confidence $\gets$ determineConfidence(Ego)
 
 #### # Calculate the confidence threshold <br>
-threshold =  $\lbrace ^{ c \\ \in  \\ \Re, \\ constant \\ threshold} _{\epsilon, \\ stochastic \\ threshold}$ <br>
+threshold $\gets$  $\lbrace ^{ c \\ \in  \\ \Re, \\ constant \\ threshold} _{\epsilon, \\ stochastic \\ threshold}$ <br>
 
 #### # Use the confidence to determine when the agent should take risks and explore new strategies <br>
 if (confidence > threshold): <br>
